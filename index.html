@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Maharani</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to top right, #ffd1dc, #ffe6f0);
+      text-align: center;
+      overflow-x: hidden;
+      animation: backgroundFade 10s infinite alternate;
+    }
+
+    @keyframes backgroundFade {
+      0% { background: linear-gradient(to top right, #ffd1dc, #ffe6f0); }
+      100% { background: linear-gradient(to bottom left, #ffe6f0, #ffd1dc); }
+    }
+
+    header {
+      padding: 2rem 1rem;
+      font-size: 2.5rem;
+      color: #fff;
+      background: #ff69b4;
+      text-shadow: 2px 2px #c71585;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .cake {
+      margin: 2rem auto;
+      width: 200px;
+      height: 200px;
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .cake .layer {
+      width: 100%;
+      height: 60px;
+      background: #ffb6c1;
+      border-radius: 10px;
+      margin-top: 10px;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .candle {
+      width: 10px;
+      height: 40px;
+      background: #fff;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .flame {
+      width: 12px;
+      height: 18px;
+      background: radial-gradient(circle, yellow 20%, orange 60%, red 80%);
+      border-radius: 50%;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 0.6s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { transform: translateX(-50%) rotate(0deg); opacity: 1; }
+      50% { transform: translateX(-50%) rotate(2deg); opacity: 0.8; }
+    }
+
+    #blowButton {
+      margin: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1.1rem;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #blowButton:hover {
+      background-color: #ff1493;
+    }
+
+    .slider {
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 500px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 400%;
+    }
+
+    
+    .slides img {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover; 
+}
+
+
+    .controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background-color: #ff1493;
+    }
+
+    .message {
+      margin: 2rem;
+      font-size: 1.3rem;
+      color: #b22222;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>Happy Birthday MAHARANI 👑</header>
+
+<div class="cake">
+  <div class="candle" style="left: 20%;">
+    <div class="flame"></div>
+  </div>
+  <div class="candle" style="left: 35%;">
+    <div class="flame"></div>
+  </div>
+  <div class="candle" style="left: 50%;">
+    <div class="flame"></div>
+  </div>
+  <div class="candle" style="left: 65%;">
+    <div class="flame"></div>
+  </div>
+  <div class="candle" style="left: 80%;">
+    <div class="flame"></div>
+  </div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+</div>
+
+
+  <button id="blowButton">Blow the Candle</button>
+
+  <div class="slider">
+    <div class="slides" id="slides">
+      <!-- Replace image URLs below with your own -->
+      <img src="IMG-20250312-WA0009.jpg" />
+      <img src="IMG-20250312-WA0010.jpg" />
+      <img src="IMG-20250312-WA0068.jpg" />
+      <img src="IMG-20250312-WA0002.jpg" />
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="changeSlide(-1)">Prev</button>
+    <button onclick="changeSlide(1)">Next</button>
+  </div>
+
+  <div class="message">
+    <p>To my precious MAHARANI,</p>
+    <p>On this beautiful day, I want to remind you that you are the queen of my heart, the light of my life, and the most precious gift this world has given me.</p>
+    <p>May your smile shine brighter than the candles, your heart be fuller than the cake, and your joy be infinite like my love for you.</p>
+    <p>Happy Birthday, my forever Queen.</p>
+  </div>
+
+
+  <script>
+    const flames = document.querySelectorAll('.flame');
+    const blowButton = document.getElementById('blowButton');
+    const slides = document.getElementById('slides');
+    const slideImages = slides.querySelectorAll('img');
+    let index = 0;
+    const totalSlides = slideImages.length;
+  
+    blowButton.addEventListener('click', () => {
+      flames.forEach(f => f.style.display = 'none');
+    });
+  
+    function changeSlide(dir) {
+      index = (index + dir + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+  
+    // Set slides container width based on number of images
+    slides.style.width = `${totalSlides * 100}%`;
+  </script>
+  
+
+</body>
+</html>
